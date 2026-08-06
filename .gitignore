@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Secrets — NIKADA u git
+.env
+
+# Logs
+Logs/
+
+# Runtime data
+Data/*.db
+Data/Transcripts/
+Data/*.json
+
+# Temp
+temp_*/
+update_*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env example je dokumentacija, ali pravi .env se ignoriše gore

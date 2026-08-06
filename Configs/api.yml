@@ -1,0 +1,8 @@
+# -------------------------------
+#   API Server Configuration
+# -------------------------------
+
+API:
+  Enabled: true
+  Port: 8099 # NEMOJ 3000 (konflikt sa Dokploy). Preporučeno 8099
+  SecretKey: "PUT_RANDOM_STRING_HERE" # DO NOT SHARE THIS KEY WITH ANYONE

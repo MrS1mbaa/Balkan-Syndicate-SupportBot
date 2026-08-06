@@ -1,0 +1,333 @@
+#      ___                            _    ___        _
+#    / __> _ _  ___  ___  ___  _ _ _| |_ | . > ___ _| |_
+#     \__ \| | || . \| . \/ . \| '_> | |  | . \/ . \ | |
+#     <___/`___||  _/|  _/\___/|_|   |_|  |___/\___/ |_|
+#                |_|  |_|
+#
+#           SupportBot created by Emerald Services
+#           Installed with MIT License
+#
+#           Discord Support: https://discord.gg/emeraldsrv
+#           Official Documentation: https://docs.emeraldsrv.com
+#           Addons Marketplace: https://community.emeraldsrv.com
+#
+#           Messages Configuration (messages.yml)
+
+# ----------------------------
+# Info Command
+# ----------------------------
+
+Info:
+  Title: "About Us"
+  Description: "SupportBot is an open-sourced support system for discord. It's completely free to use with high amounts of customization to match your own brand."
+  Button: "Visit Site"
+  URL: "https://docs.emeraldsrv.com"
+  Colour: "#45b463"
+
+# ----------------------------
+# Welcome/Leave Messages
+# ----------------------------
+
+Welcome:
+  Enabled: true
+  LayoutStyle: "modern" 
+  # Available Layout Styles
+  #  "modern" - For the new Discord v2 components
+  #  "classic" - Use the classic Discord look.
+
+  Embed:
+    Colour: "#45b463"
+    Title: "Welcome to ServerName"
+    Message: ":smile: %joined_user% has just landed!\n\n🔨 **Server Rules:** <#1202667199853232129>"
+    Icon:
+      Mode: "USER" # USER | BOT | CUSTOM
+      CustomURL: "https://example.com/custom.png"
+    Image:
+      Enabled: false
+      URL: "https://example.com/banner.png"
+    Buttons:
+      Enabled: true
+      List:
+        - label: "BuiltByBit"
+          style: "Link"
+          url: "https://your-website.com/how-to-play-java"
+          emoji: "⌨️"
+        - label: "GitHub"
+          style: "Link"
+          url: "https://your-website.com/how-to-play-bedrock"
+          emoji: "👾"
+        - label: "Tebex"
+          style: "Link"
+          url: "https://your-store.tebex.io/"
+          emoji: "🛒"
+
+  Modern:
+    Colour: "#45b463"
+    Title: "**Welcome to ServerName**"
+    Body: ":smile: %joined_user% has just landed!\n\n🔨 **Server Rules:** <#1202667199853232129>"
+    Icon:
+      Mode: "BOT" # USER | BOT | CUSTOM
+      CustomURL: "https://example.com/custom-icon.png"
+    Image:
+      Enabled: false
+      URL: "https://example.com/banner.png"
+    Buttons:
+      - label: "BuiltByBit"
+        style: "Link"
+        url: "https://your-website.com/how-to-play-java"
+        emoji: "⌨️"
+      - label: "GitHub"
+        style: "Link"
+        url: "https://your-website.com/how-to-play-bedrock"
+        emoji: "👾"
+      - label: "Tebex"
+        style: "Link"
+        url: "https://your-store.tebex.io/"
+        emoji: "🛒"
+
+Leave:
+  Embed:
+    Colour: "#f74343"
+    Title: "Goodbye!"
+    Message: ":slight_frown: %left_user% has recently dropped out!"
+    Thumbnail: "BOT"
+
+    ImageEnabled: false
+    ImageURL: "https://animagelink.png/"
+
+# ----------------------------
+# Suggestion Messages
+# ----------------------------
+
+Suggestions:
+  Sent_Title: "Suggestion Sent!"
+  Sent: ":white_check_mark: **You have successfully sent a suggestion.**"
+  NoSelfVote: ":x: **You cannot vote on your own suggestion.**"
+  RemoveVoteButton: "Remove Vote"
+
+# ----------------------------
+# Ticket Messages
+# ----------------------------
+
+Ticket:
+
+#  Available Placeholders:
+
+#  %ticketusername% - User who created the ticket.
+#  <@%ticketauthor%> - Tags the user who created the ticket.
+#  <#%ticketid%> - Mentions the ticket channel.
+
+  # You can use Markdown formatting in this message:
+  # # Heading 1
+  # ## Heading 2
+  # ### Heading 3
+  # **Bold** text
+  # *Italic* text
+  # -# Small text
+  # - Bullet points
+  # Links: [text](https://example.com)
+
+  TicketAuthorTitle: "-# %ticketusername%'s Ticket"
+  TicketTitle: "## Support Ticket"
+  TicketMessage: "Hello <@%ticketauthor%>, Thank you for creating a support ticket\nPlease wait patiently whilst a member of our team reaches out to you."
+  TicketThumbnail: "https://images.emojiterra.com/google/android-pie/512px/1f39f.png"
+  TicketCreatedAlert: ":ticket: Ticked Created: <#%ticketid%>"
+  TicketExists: "❌ Ticket already exists"
+  TicketClaim: ":white_check_mark: Ticket claimed by" #The user who claimed the ticket will be added to the end of this message
+  TicketUnclaim: ":white_check_mark: Ticket unclaimed by" #The user who claimed the ticket will be added to the end of this message
+
+  TicketArchived: ":white_check_mark: Ticket archived."
+  TicketUnarchived: ":white_check_mark: Ticket unarchived."
+  TicketLocked: ":lock: Ticket is locked."
+  DisableInvites: "🔒 Invites have been disabled for this ticket." 
+  EnableInvites: "🔓 Invites have been enabled for this ticket." 
+
+#  Available Placeholders:
+
+#  <@%user%> - Tags the user who was added to the ticket.
+
+  Blacklisted: ":x: You are not allowed to open a ticket"
+  Muted: ":x: You are `Muted` and therefore not allowed to open any tickets"
+  InvalidSubject: "No Reason Provided!"
+
+  ConfirmClose: "Please confirm closing the ticket by clicking the button below."
+  CloseTimeout: "Ticket close confirmation timed out."
+
+  RenamedSuccess: "🏷️ Ticket renamed successfully!"
+
+  ClaimTickets:
+    ClaimTitle: "Incoming Support Request!"
+    ClaimMessage: "A new ticket has been created by <@!%user%>. Click the button below to claim this ticket."
+    ClaimMessage_Edit: "<#%channel%> was claimed by <@!%user%>."
+
+    ClaimedTitle: "Ticket Claimed!"
+    Claimed: "You have successfully claimed this ticket. <#%channel%>"
+    NoPermsToClaimTitle: "Error, no permissions!"
+    NoPermsToClaim: ":x: **Err!** You do not permissions to claim this ticket."
+
+    ReassigningTitle: "Reassigning!..."
+    ReassigningMessage: "<@%user%> did not claim the ticket. **Reassigning...**"
+
+  TicketQuestions:
+    Details: 
+      Title: "Ticket Details"
+      Description: "Questions by <@%user%>" # Use <@%user%> to display the username.
+
+  AIMode:
+    Title: "SupportBot AI"
+    Description: "Use the buttons below to enable or disable AI chat in this ticket."
+    EnabledMessage: "AI Mode has been enabled for this ticket."
+    DisabledMessage: "AI Mode has been disabled for this ticket."
+
+    ThreadWelcomeTitle: "SupportBot AI"
+    ThreadWelcomeMessage: "Hi! I’m SupportBot AI. You can chat with me here about your issue."
+    
+    EnableButton: "Enable AI Mode"
+    DisableButton: "Disable AI Mode"
+
+    TicketNotFound: "Ticket not found."
+    EnableError: "There was an error enabling SupportBot AI."
+    DisableError: "There was an error disabling SupportBot AI."
+
+# ----------------------------
+# Review Messages
+# ----------------------------
+
+ReviewSystem:
+  Rate:
+    Title: "Review us!"
+    Description: "Please rate our support for this ticket (1-5 stars)."
+
+  Stars:
+    One: "⭐ 1 Star"
+    Two: "⭐⭐ 2 Stars"
+    Three: "⭐⭐⭐ 3 Stars"
+    Four: "⭐⭐⭐⭐ 4 Stars"
+    Five: "⭐⭐⭐⭐⭐ 5 Stars"
+
+  Comment:
+    Title: "Write a comment."
+    Description: "Write a comment about your experience."
+
+  ReviewEmbed:
+    Title: "Ticket Review"
+    CommentTitle: "Comment"
+    RatingTitle: "Rating"
+    ReviewedStaffTitle: "Reviewed Staff:"
+    ReviewedByTitle: "Reviewed By:"
+    ReviewEmoji: "⭐"
+    Color: "#f7a943"
+
+# ----------------------------
+# Mod Command Messages
+# ----------------------------
+
+Mod:
+  
+  TicketBlacklist:
+    Add:
+      Description: "Add a user to the ticket blacklist"
+      UserDescription: "User to blacklist"
+      AlreadyBlacklisted: ":x: {userTag} is already blacklisted."
+      Success: ":white_check_mark: {userTag} has been added to the blacklist. They can no longer use the ticket system."
+
+    Remove:
+      Description: "Remove a user from the ticket blacklist"
+      UserDescription: "User to remove from blacklist"
+      NotBlacklisted: ":x: {userTag} is not blacklisted."
+      Success: ":white_check_mark: {userTag} has been removed from the blacklist. They can now use the ticket system again."
+
+    View:
+      Description: "View the list of all blacklisted users"
+      NoBlacklistedUsers: ":information_source: There are currently no users on the blacklist."
+
+
+# ----------------------------
+# Logging Messages
+# ----------------------------
+
+TicketLog:
+  Title: "Ticket Log"
+  Colour: "#0cc559"
+
+TicketBlacklistLog:
+  Title: "Ticket Blacklist Log"
+  Colour: "#0cc559"
+
+# ----------------------------
+# Misc Messages
+# ----------------------------
+
+AddUser:
+  NotInTicket_Title: "Ticket Invitation"
+  NotInTicket_Description: "This command can only be used within a ticket thread."
+  
+  Invite_Title: "User Invited"
+  Invite_Description: "%username% has been invited to join the ticket."
+
+  DM_Title: "Ticket Invitation"
+  DM_Description: "You have been invited to join the ticket %channelname%. Do you accept?"
+  
+  Accept_Label: "Accept"
+  Reject_Label: "Reject"
+  ViewTicket_Label: "Go to Ticket"
+  
+  Accepted_Title: "Invitation Accepted"
+  Accepted_Message: "You have been added to the ticket."
+  AddedToTicket_Title: "Added to Ticket"
+  AddedToTicket_Description: "You have been added to the ticket %channel_link%."
+
+  # Added Message for inside the ticket, this informs everyone inside the ticket that the user has been added.
+  Added_Title: "User Added"
+  Added_Description: "Successfully added **%username%** to the ticket."
+  
+  Declined_Title: "Invitation Declined"
+  Declined_Message: "You have declined the invitation."
+  
+  NoResponse_Title: "No Response"
+  NoResponse_Message: "You did not respond in time. Please contact staff if you wish to join the ticket."
+  
+  Error_Title: "Error"
+  Error_Adding: "There was an error adding you to the ticket. Please try again."
+  
+  DM_Error_Title: "Error"
+  DM_Error_Description: "Unable to send a DM to %username%. Please ensure your DMs are enabled."
+  
+  Unexpected_Error_Title: "Error"
+  Unexpected_Error_Description: "An unexpected error occurred: %error%"
+
+RemoveUser:
+  NotInTicket_Title: "Error"
+  NotInTicket_Description: "This command can only be used in ticket threads."
+  
+  Removed_Title: "User Removed"
+  Removed_Message: "The user has been successfully removed from the ticket."
+  
+  RemovedFromTicket_Title: "Removed from Ticket"
+  RemovedFromTicket_Description: "You have been removed from the ticket channel %channel_link%."
+
+  Error_Title: "Error"
+  Error_Removing: "There was an error removing the user from the ticket."
+
+ForceAddUser:
+  NotInTicket_Title: "Not a Ticket"
+  NotInTicket_Description: "This command can only be used within a ticket thread."
+
+  Added_Title: "User Added"
+  Added_Description: "Successfully added %username% to the ticket."
+
+  AddedToTicket_Title: "You have been added to a Ticket"
+  AddedToTicket_Description: "You have been added to the ticket channel [%channel_link%]."
+
+  Error_Title: "Error"
+  Error_Adding: "There was an error adding the user to the ticket."
+
+Error:
+  IncorrectPermissions: ":x: **Error!** You do not have the correct permissions to use this command."
+  MissingChannel: ":x: **Error!** Required channel not found. Please ensure it is set up correctly!"
+  UserNotFound: ":x: **Error!** Specified user not found. Please check if they are in this server."
+  CommandNotAllowedHere: ":warning: This command cannot be used in this channel."
+  EntryAlreadyExists: ":warning: Cannot complete the action, as the entry already exists."
+  EntryDoesNotExist: ":warning: Cannot complete the action, as the entry does not exist."
+  ActionFailed: ":x: **Error!** An error occurred while processing your request. Please try again later."
+  InvalidChannel: ":x: **Error!** The suggestions channel has not been set up correctly."

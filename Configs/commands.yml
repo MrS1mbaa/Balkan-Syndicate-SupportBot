@@ -1,0 +1,196 @@
+#      ___                            _    ___        _
+#    / __> _ _  ___  ___  ___  _ _ _| |_ | . > ___ _| |_
+#     \__ \| | || . \| . \/ . \| '_> | |  | . \/ . \ | |
+#     <___/`___||  _/|  _/\___/|_|   |_|  |___/\___/ |_|
+#                |_|  |_|
+#
+#           SupportBot created by Emerald Services
+#           Installed with MIT License
+#
+#           Discord Support: https://discord.gg/emeraldsrv
+#           Official Documentation: https://docs.emeraldsrv.com
+#           Addons Marketplace: https://community.emeraldsrv.com
+#
+#           Commands Configuration (commands.yml)
+
+Help:
+  Command: "help"
+  Description: "Get a list of all the commands."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+Info:
+  Command: "info"
+  Description: "Get information about the **ServerName**."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+TicketPanel:
+  Command: "ticketpanel"
+  Description: "Create the ticket creation panel"
+  Permission: ["Administrator"]
+  Enabled: true  
+
+Profile:
+  Command: "profile"
+  Description: "Shows the profile for a discord member."
+  Permission: ["SendMessages"]
+  # Command is automatically disabled when the TicketClaims is disabled.
+
+OpenTicket:
+  Command: "ticket"
+  Description: "Create a support ticket."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+AddUser:
+  Command: "add"
+  Description: "Add a user to a support ticket."
+  Permission: ["SendMessages"]
+  Enabled: true
+  
+CloseTicket:
+  Command: "close"
+  Description: "Close a support ticket"
+  Permission: ["SendMessages"]
+  Enabled: true
+
+TicketManage:
+  Command: "ticketmanage"
+  Description: "Manage an existing support ticket."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+  Close:
+    Command: "close"
+    Description: "Close a support ticket."
+
+  ForceAdd:
+    Command: "forceadd"
+    Description: "Add a user to a support ticket by bypassing the invite system."
+
+  ForceRemove:
+    Command: "forceremove"
+    Description: "Remove a user from a support ticket by bypassing the normal restrictions."
+
+  Rename:
+    Command: "rename"
+    Description: "Rename a support ticket by bypassing the normal restrictions."
+
+Suggestion:
+  Command: "suggest"
+  Description: "Create a suggestion."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+SuggestionAdmin:
+  Command: "suggestadmin"
+  Description: "Update a suggestion’s status."
+  Permission: ['SendMessages']
+  # Disable "Suggestion" to disable this command.
+
+Embed:
+  Command: "embed"
+  Description: "Build a discord embed."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+Translate:
+  Command: "translate"
+  Description: "Translate something to english"
+  Permission: ["SendMessages"]
+  Enabled: true
+
+UserInfo:
+  Command: "userinfo"
+  Description: "Get info about a user."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+Ping:
+  Command: "ping"
+  Description: "Pong."
+  Permission: ["SendMessages"]
+  Enabled: true
+
+# ---------------------------------------
+#   Bot Moderator Commands
+# ---------------------------------------
+
+Mod:
+  Command: "mod"
+  Description: "Execute a moderation action."
+  Permission: ["BanMembers", "KickMembers"]
+  Enabled: true
+
+  TicketBlacklist:
+    Command: "ticket-blacklist"
+    Description: "Blacklist a user from creating Tickets."
+
+    Add: 
+      Command: "add"
+      Description: "Add a user to the blacklist."
+      
+    Remove:
+      Command: "remove"
+      Description: "Remove a user from the blacklist."
+
+    View:
+      Command: "view"
+      Description: "View all blacklisted users."
+
+# ---------------------------------------
+#   Bot Administrator Commands
+# ---------------------------------------
+
+Settings:
+  Command: "settings"
+  Description: "Update bot settings."
+  Permission: ["Administrator"]
+  Enabled: true
+
+AI:
+  Command: "ai"
+  Description: "Manage SupportBot AI settings and memory."
+  Permission: ["Administrator"]
+  Enabled: true
+
+  Train:
+    Command: "train"
+    Description: "Train the AI by adding knowledge to its database."
+
+  Knowledge:
+    Command: "knowledge"
+    Description: "Manage the AI knowledge base."
+    Clear:
+      Command: "clear"
+      Description: "Clear all trained knowledge from the AI."
+
+  Memory:
+    Command: "memory"
+    Description: "Manage the AI conversational memory."
+    Clear:
+      Command: "clear"
+      Description: "Clear recent conversation memory for this channel."
+
+# ---------------------------------------
+#   Command Description Configuration
+# ---------------------------------------
+
+BlacklistDesc: "Blacklist a user from creating Tickets."
+TicketAddDesc: "Add a user to a support ticket."
+TicketRemoveDesc: "Remove a user from a support ticket."
+TranslateCommandDesc: "Translates the language provided, along with the abbreviation (2 char) long language code"
+OpenTicketDesc: "Open a new support ticket."
+CloseTicketDesc: "Close your support ticket."
+InfoCommandDesc: "Get information about the brand."
+PingCommandDesc: "Pong!"
+HelpCommandDesc: "Get a list of all the commands."
+EmbedCommandDesc: "Send a message as an embed."
+SuggestCommandDesc: "Suggest a feature for the server."
+UserInfoCommandDesc: "Get info about a user."
+TicketManageDesc: "Manage an existing support ticket."
+TicketManageCloseDesc: "Close a support ticket."
+TicketManageForceAddDesc: "Add a user to a support ticket by bypassing the invite system."
+TicketManageForceRemoveDesc: "Remove a user from a support ticket by bypassing the normal restrictions."
+TicketManageForceRenameDesc: "Rename a support ticket by bypassing the normal restrictions."
