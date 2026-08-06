@@ -7,13 +7,14 @@ const fs = require("fs");
 const path = require("path");
 
 // --- Ručni .env loader (izbegava dodatnu zavisnost) ---
+// Pravilo: vrednost iz .env fajla IMA PREDNOST nad process.env.
+// Ovo sprečava da Dokploy prosledi placeholder/kratku vrednost koja
+// prebije ispravan token u .env. (Za dev na mašini, .env je ispravan.)
 function loadEnv() {
   const envPath = path.join(__dirname, ".env");
   if (!fs.existsSync(envPath)) {
-    console.error(
-      "[CONFIG] .env fajl ne postoji. Kopiraj .env.example u .env i popuni vrednosti."
-    );
-    process.exit(1);
+    // Ako .env ne postoji, oslanjamo se na process.env (Dokploy env vars)
+    return;
   }
   const content = fs.readFileSync(envPath, "utf8");
   for (const line of content.split("\n")) {
@@ -23,8 +24,8 @@ function loadEnv() {
     if (eq === -1) continue;
     const key = trimmed.slice(0, eq).trim();
     const value = trimmed.slice(eq + 1).trim();
-    // Ne overwrite-uj postojeće env var (omogućava override preko shell-a)
-    if (process.env[key] === undefined) {
+    // UVIJEK overwrite-uj (i prazne i postojeće) iz .env fajla
+    if (key) {
       process.env[key] = value;
     }
   }
