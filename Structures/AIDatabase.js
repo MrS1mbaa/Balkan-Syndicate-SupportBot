@@ -1,7 +1,14 @@
 const Database = require("better-sqlite3");
 const path = require("path");
+const fs = require("fs");
 
-const db = new Database(path.join(__dirname, "../Data/ai-memory.db"));
+// Osiguraj da Data/ folder postoji pre otvaranja baze
+const dataDir = path.join(__dirname, "../Data");
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
+
+const db = new Database(path.join(dataDir, "ai-memory.db"));
 
 db.pragma("journal_mode = WAL");
 
