@@ -223,9 +223,9 @@ Ticket:
       - "Have you tried resolving the issue yourself?"
 
   Log:
-    TicketDataLog: "CHANNEL_ID"
+    TicketDataLog: "1499062298587955312"
     TickeDataTitle: "Ticket Data"
-    TicketBlacklistLog: "CHANNEL_ID"
+    TicketBlacklistLog: "1499062298587955312"
 
   AIMode:
     Enabled: true
