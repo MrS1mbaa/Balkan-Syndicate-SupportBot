@@ -33,9 +33,14 @@ const TicketNumberID = require("../../Structures/TicketID.js");
 
 async function isBlacklisted(userId) {
   let blacklistData;
+  const blacklistPath = "./Data/BlacklistedUsers.json";
   try {
+    if (!fs.existsSync(blacklistPath)) {
+      // Kreiraj prazan fajl ako ne postoji (izbegava ENOENT grešku)
+      fs.writeFileSync(blacklistPath, JSON.stringify({ blacklistedUsers: [] }));
+    }
     blacklistData = JSON.parse(
-      fs.readFileSync("./Data/BlacklistedUsers.json", "utf8"),
+      fs.readFileSync(blacklistPath, "utf8"),
     );
   } catch (error) {
     console.error("Error reading BlacklistedUsers.json:", error);

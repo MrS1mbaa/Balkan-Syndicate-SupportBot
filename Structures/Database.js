@@ -140,6 +140,13 @@ function normaliseTicketRow(row) {
 }
 
 module.exports = {
+  // Sugestije — add (thread_id je ID poruke)
+  add(threadId, authorId, text) {
+    db.prepare(
+      `INSERT INTO suggestions (thread_id, author_id, text, status) VALUES (?, ?, ?, 'Created')
+       ON CONFLICT(thread_id) DO UPDATE SET author_id = excluded.author_id, text = excluded.text, status = 'Created'`
+    ).run(String(threadId), String(authorId), String(text));
+  },
   addTicket(ticket) {
     const now = Date.now();
 
