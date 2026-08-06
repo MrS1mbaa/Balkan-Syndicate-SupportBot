@@ -183,6 +183,9 @@ Ticket:
   Close:
     StaffOnly: true
     # Set to false is anyone is able to close a ticket.
+    Confirmation_Button: "Confirm Close"
+    Confirmation_Emoji: "✅"
+    Confirmation_Style: "4"
 
   Invites: # Invites is for ticket threads.
     StaffOnly: true
