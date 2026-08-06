@@ -133,6 +133,24 @@ module.exports = new Command({
 
     DB.add(message.id, interaction.user.id, suggestion);
 
+    // Upiši u JSON koji interactionCreate.js čita (upvote/downvote)
+    const suggestionDataPath = "./Data/SuggestionData.json";
+    let suggestions = {};
+    if (fs.existsSync(suggestionDataPath)) {
+      try {
+        suggestions = JSON.parse(fs.readFileSync(suggestionDataPath, "utf8"));
+      } catch (e) {
+        suggestions = {};
+      }
+    }
+    suggestions[message.id] = {
+      suggestion,
+      author: interaction.user.id,
+      upvotes: [],
+      downvotes: [],
+    };
+    fs.writeFileSync(suggestionDataPath, JSON.stringify(suggestions, null, 2));
+
     return interaction.reply({
       embeds: [
         new Discord.EmbedBuilder()

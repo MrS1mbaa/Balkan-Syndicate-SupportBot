@@ -855,6 +855,16 @@ module.exports = new Event("interactionCreate", async (client, interaction) => {
       interaction.customId === "downvote" ||
       interaction.customId === "removevote"
     ) {
+      // Učitaj sugestije iz JSON (piše ih suggest.js)
+      let suggestions = {};
+      const suggestionDataPath = "./Data/SuggestionData.json";
+      if (fs.existsSync(suggestionDataPath)) {
+        try {
+          suggestions = JSON.parse(fs.readFileSync(suggestionDataPath, "utf8"));
+        } catch (e) {
+          suggestions = {};
+        }
+      }
       const suggestion = suggestions[interaction.message.id];
       if (!suggestion)
         return interaction.reply({
