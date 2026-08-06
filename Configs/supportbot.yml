@@ -161,9 +161,9 @@ Ticket:
   # - Channel where ticket threads are made. (only if ticket threads is enabled above.)
 
   # For TicketType: channels
-  TicketChannelsCategory: "1535033990690373763" 
-  TicketChannelsCategory2: "1535033990690373763" # This will be used if the first category has reached the max channel limit.
-  TicketArchiveCategory: "1535033990690373763"
+  TicketChannelsCategory: "1499062179603812392" 
+  TicketChannelsCategory2: "1499062179603812392" # This will be used if the first category has reached the max channel limit.
+  TicketArchiveCategory: "1499062179603812392"
   # ---
 
   Channel: "ticket-" # The prefix for ticket channel names
@@ -246,7 +246,7 @@ Ticket:
         Name: "General Support"
         Description: "Open a general support ticket"
         Emoji: "🎫"
-        Category: "1535033990690373763"
+        Category: "1499062179603812392"
         Role: "1535032996233740439" # Staff
         ChannelPrefix: "support-"
         DefaultPriority: "normal"
@@ -258,7 +258,7 @@ Ticket:
         Name: "Purchase Support"
         Description: "Get help with store purchases"
         Emoji: "💳"
-        Category: "1535033990690373763"
+        Category: "1499062179603812392"
         Role: "1535032996233740439" # Staff
         ChannelPrefix: "purchase-"
         DefaultPriority: "high"
@@ -271,7 +271,7 @@ Ticket:
         Name: "Player Report"
         Description: "Report a player for breaking the rules"
         Emoji: "🚨"
-        Category: "1535033990690373763"
+        Category: "1499062179603812392"
         Role: "1535032996233740439" # Staff
         ChannelPrefix: "report-"
         DefaultPriority: "normal"
@@ -284,7 +284,7 @@ Ticket:
         Name: "Ban Appeals"
         Description: "Appeal a server punishment"
         Emoji: "⚖️"
-        Category: "1535033990690373763"
+        Category: "1499062179603812392"
         Role: "1535032996233740439" # Staff
         ChannelPrefix: "appeals-"
         DefaultPriority: "low"
